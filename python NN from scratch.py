@@ -122,4 +122,4 @@ _, predictions_1 = feedforward(input_1, trained_W1, trained_b1, trained_W2, trai
 predictions_1 = (predictions_1 >= 0.5).astype(int)
     
 print("Predictions:") 
-print(binary)
+print(predictions_1)
