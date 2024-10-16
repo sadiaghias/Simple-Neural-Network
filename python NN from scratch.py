@@ -24,11 +24,11 @@ def initialize_parameters(input_size, hidden_size, output_size):
 def feedforward(X, W1, b1, W2, b2):
     # Input to hidden layer
     Z1 = np.dot(X, W1) + b1
-    A1 = sigmoid(Z1)
+    A1 = sigmoid(Z1) # output of hidden layer
     
     # Hidden to output layer
     Z2 = np.dot(A1, W2) + b2 
-    A2 = sigmoid(Z2)
+    A2 = sigmoid(Z2) # final output
     
     return A1, A2
 
@@ -111,17 +111,15 @@ binary_predictions = (predictions >= 0.5).astype(int)
 print("Binary Predictions (0 or 1):")
 print(binary_predictions)
 
-# example input 
-
-import numpy as np
+# Example input from user 
 
 input_str = input("Enter numbers separated by space: ")  # Get input as a string
 input_list = list(map(int, input_str.split()))  # Split the string and convert to integers
-input_1 = np.array(input_list)  # Create a NumPy array
+input_1 = np.array(input_list)  # Create a NumPy array26
 
 
 _, predictions_1 = feedforward(input_1, trained_W1, trained_b1, trained_W2, trained_b2)
-binary = (predictions_1 >= 0.5).astype(int)
+predictions_1 = (predictions_1 >= 0.5).astype(int)
     
 print("Predictions:") 
 print(binary)
